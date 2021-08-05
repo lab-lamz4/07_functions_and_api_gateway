@@ -1,6 +1,8 @@
-# 05 EC2 + EBS
+# 07_functions_and_api_gateway
 
-The task to create an EBS volume and check ability to mount this volume to another EC2 instance and check that data in this EBS attached volume can be read.
+The task to deploy API Gateway with staging + routing to lambda + logs into CloudWatch, and as it could be guessed - deploy lambda function that serves to requests from API + alias to get ability split traffic to different lambda versions + logs into CloudWatch
+
+unfortunately, modules for creating API GW using aws_apigatewayv2* resources haven't existed yet, so I use it without modules.
 
 ## Used resources
 
@@ -19,7 +21,6 @@ aws configure
 ```
 terraform init
 terrafrom plan
-terraform apply -target module.vpc #that is needed to get id of subnets and use it in ec2 playbook
 terrafrom apply
 terraform destroy
 ```
